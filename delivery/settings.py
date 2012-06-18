@@ -120,6 +120,7 @@ INSTALLED_APPS = (
     # Delivery
     'core',
     'localization',
+    'gunicorn',
     'south',
 )
 
