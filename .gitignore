@@ -25,3 +25,9 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+#PyCharm
+.idea/
+
+#Project Settings
+local_settings.py
