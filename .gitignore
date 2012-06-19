@@ -31,3 +31,11 @@ pip-log.txt
 
 #Project Settings
 local_settings.py
+
+#Static files
+public/
+
+#SQLite3 DB
+*.db
+*.sqlite
+*.sqlite3
