@@ -79,5 +79,7 @@ def data_contact_clear(request):
 
 
 def contact_sent_clear(request):
-    del request.session['contact_sent']
+    if 'contact_sent' in request.session:
+        del request.session['contact_sent']
+    
     return redirect(reverse('core:contact'))
