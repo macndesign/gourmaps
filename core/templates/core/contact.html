@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Contact{% endblock %}
+{% block content %}
+    <h2>Contact</h2>
+    <p>
+        <a href="{% url core:data-contact-clear %}">Data contact clear</a>
+        <a href="{% url core:contact-sent-clear %}">Contact sent clear</a>
+    </p>
+    {% if not contact_sent %}
+        {% if success %}
+            <h3>Success!</h3>
+            <p>Name: {{ name }}</p>
+            <p>Email: {{ email }}</p>
+            <p>Message: {{ message }}</p>
+        {% else %}
+            <form method="post">{% csrf_token %}
+                {{ contact_form.as_p }}
+                <input type="submit" value="Send">
+            </form>
+        {% endif %}
+    {% else %}
+        <p>Sorry, already sent contact.</p>
+    {% endif %}
+{% endblock %}
