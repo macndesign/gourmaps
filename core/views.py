@@ -17,7 +17,6 @@ class DataContact(object):
 
 def contact(request):
     success = False
-    context = {}
     name, email, message = None, None, None
     contact_sent = request.session.get('contact_sent', False)
 
@@ -65,16 +64,7 @@ def contact(request):
 
 
 def data_contact_clear(request):
-    data_contact = request.session['data_contact']
-    print data_contact.name
-    print data_contact.email
-    print data_contact.message
-
-    data_contact = DataContact()
-    print data_contact.name
-    print data_contact.email
-    print data_contact.message
-
+    request.session['data_contact'] = DataContact()
     return redirect(reverse('core:contact'))
 
 
